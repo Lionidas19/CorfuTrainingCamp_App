@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 200">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #ff882f;
+        stroke-width: 6.71px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-3 {
+        filter: url(#outer-glow-2);
+      }
+
+      .cls-4 {
+        filter: url(#outer-glow-3);
+      }
+
+      .cls-5 {
+        filter: url(#outer-glow-1);
+      }
+
+      .cls-2 {
+        stroke: #ffd7c2;
+      }
+    </style>
+    <filter id="outer-glow-1" x="-4.86" y="10.88" width="508.8" height="153.6" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="7.22"/>
+      <feFlood flood-color="#ff882f" flood-opacity="1"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-2" x="-4.86" y="10.88" width="508.8" height="153.6" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-2" stdDeviation="7.22"/>
+      <feFlood flood-color="#ff882f" flood-opacity="1"/>
+      <feComposite in2="blur-2" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-3" x="5.24" y="20.98" width="488.64" height="133.44" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-3" stdDeviation="4.81"/>
+      <feFlood flood-color="#ff882f" flood-opacity="1"/>
+      <feComposite in2="blur-3" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-5">
+    <path class="cls-1" d="M442.89,138.65H56.32c-19.77,0-35.79-20.15-35.79-45v-12.38c0-24.85,16.02-45,35.79-45h386.15c19.77,0,35.79,20.15,35.79,45v12.38c0,24.85-16.02,45-35.79,45h0"/>
+  </g>
+  <g class="cls-3">
+    <path class="cls-1" d="M442.89,138.65H56.32c-19.77,0-35.79-20.15-35.79-45v-12.38c0-24.85,16.02-45,35.79-45h386.15c19.77,0,35.79,20.15,35.79,45v12.38c0,24.85-16.02,45-35.79,45h0"/>
+  </g>
+  <g class="cls-4">
+    <path class="cls-2" d="M442.89,138.65H56.32c-19.77,0-35.79-20.15-35.79-45v-12.38c0-24.85,16.02-45,35.79-45h386.15c19.77,0,35.79,20.15,35.79,45v12.38c0,24.85-16.02,45-35.79,45h0"/>
+  </g>
+</svg>
