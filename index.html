@@ -1,10 +1,10 @@
-<!DOCTYPE html><html lang="en-US"><head>
-
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
   <base href="/">
-
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="CorfuTrainingCamp">
+  <meta name="description" content="CorfuTrainingCamp App.">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-web-app-capable" content="yes">
@@ -19,6 +19,52 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-<script src="flutter_bootstrap.js" async></script>
+<script>
+  function launchFlutter() {
+    // Load the Flutter bootstrap script to start the app
+    var script = document.createElement('script');
+    script.src = 'flutter_bootstrap.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }
+
+  window.addEventListener('load', function() {
+    if ('serviceWorker' in navigator) {
+      const timestamp = new Date().getTime();
+      const xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("GET", `/version.json?v=${timestamp}`, true);
+
+      xmlhttp.addEventListener('load', function() {
+        const buildNumber = xmlhttp.responseText.trim();
+        console.log(`App Version (from version.json): ${buildNumber}`); // Log the version from version.json
+
+        const currentBuildNumber = localStorage.getItem('buildNumber');
+
+        if (currentBuildNumber !== buildNumber) {
+          console.log('Clearing outdated caches...');
+          caches.keys().then(keys => keys.forEach(key => caches.delete(key)));
+          localStorage.setItem('buildNumber', buildNumber);
+        }
+
+        // Also log the version stored in localStorage (if needed)
+        console.log(`Current Build Number (stored in localStorage): ${currentBuildNumber}`);
+
+        launchFlutter();
+      });
+
+      xmlhttp.addEventListener('error', function() {
+        console.error('Failed to load version.json');
+        launchFlutter();
+      });
+
+      xmlhttp.addEventListener('abort', launchFlutter);
+      xmlhttp.addEventListener('timeout', launchFlutter);
+      xmlhttp.send();
+    } else {
+      console.log('Service Worker not supported.');
+      launchFlutter();
+    }
+  });
+</script>
 </body>
 </html>
